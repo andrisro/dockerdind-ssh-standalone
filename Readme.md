@@ -13,5 +13,5 @@ docker build -t hub.docker.com/andrisro/dockerdindsshstandalone .
 
 2. Run-Container
 ```
-docker run --privileged -t -i hub.docke.com/andrisro/dockerdindsshstandalone .
+docker run --privileged -p 22:22 -t -i hub.docke.com/andrisro/dockerdindsshstandalone .
 ```
