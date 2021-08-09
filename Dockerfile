@@ -5,6 +5,8 @@ RUN apt-get update
 RUN apt-get install nano
 RUN apt-get install git -y
 
+RUN apt-get install bash-completion
+
 # Source for Installing SSH Server: https://github.com/rastasheep/ubuntu-sshd/blob/master/14.04/Dockerfile
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
