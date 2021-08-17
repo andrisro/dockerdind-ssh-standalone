@@ -5,8 +5,6 @@ RUN apt-get update
 RUN apt-get install nano
 RUN apt-get install git -y
 
-RUN apt-get install bash-completion
-
 # Source for Installing SSH Server: https://github.com/rastasheep/ubuntu-sshd/blob/master/14.04/Dockerfile
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
@@ -37,6 +35,11 @@ RUN /bin/bash -c \
                chmod 700 get_helm.sh; \
                ./get_helm.sh; \
                rm get_helm.sh'
+
+# Bash-Completion for Kubectl https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-bash-linux
+RUN apt-get update
+RUN apt-get install bash-completion
+RUN kubectl completion bash > /etc/bash_completion.d/kubectl
 
 EXPOSE 22
 
